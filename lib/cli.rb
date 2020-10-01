@@ -15,7 +15,7 @@ class CLI
         while input != 'exit' do
             if input.to_i > 0 && input.to_i <= print_list.count
                 puts "" 
-                #API.get_quote(Character.all.at(input.to_i - 1)) 
+                API.get_quote(Character.all.at(input.to_i - 1)) 
             else
                 puts "~~Oops! Invalid response. Please try again.~~"
             end

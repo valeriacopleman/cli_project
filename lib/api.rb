@@ -5,6 +5,7 @@ class API
         uri = URI(url)
         response = Net::HTTP.get(uri)
         characters = JSON.parse(response)
+        binding.pry
         characters.each do |char|
           Character.new(name: char["name"]) 
         end
@@ -16,9 +17,12 @@ class API
         uri = URI(url)
         response = Net::HTTP.get(uri)
         quote = JSON.parse(response)
-        #binding.pry
-        quote.each do |lines|
-            puts lines["quote"]
+        binding.pry
+        #quote["quote"][0]
+
+
+        quote.each do |q|
+            q["quote"]
         end
     end
 
