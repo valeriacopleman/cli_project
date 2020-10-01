@@ -1,22 +1,18 @@
 class Character
 
-    attr_accessor :input, :name, :list
+    attr_accessor :input, :name, :quote
     
     @@all = []
 
-    def initialize(input: nil, name: nil, list: nil)
+    def initialize(input: nil, name:  nil, quote: nil)
         @input = input
         @name = name 
-        @list = list
+        @quote = quote
         @@all << self
     end
 
     def self.all
         @@all
-    end
-
-    def self.find_by_name(name)
-        self.all.select {|quote| quote.character == character}
     end
 
 end
