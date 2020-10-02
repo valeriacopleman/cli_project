@@ -16,8 +16,10 @@ class CLI
         while @input != 'exit' do
             if @input.to_i > 0 && @input.to_i <= 57
                 puts " "
-                q = API.get_quote(Character.all.at(@input.to_i - 1))
-                puts q 
+                lines = API.get_quote(Character.all.at(@input.to_i - 1))
+                lines.each do |q|
+                    puts q["quote"]
+                end
                 puts " "
 
             else
@@ -25,7 +27,7 @@ class CLI
                 puts "~~Oops! Invalid response. Please try again.~~"
             end
                 puts "Enter the number of your favorite Breaking Bad character to get some lines or 'Exit' to exit the program: "
-                puts " "
+                puts "To  "
                 @input = gets.strip.downcase
         end
             puts ""
