@@ -1,11 +1,10 @@
 class Character
 
-    attr_accessor :input, :name
+    attr_accessor :name
     
     @@all = []
 
-    def initialize(input: nil, name:  nil)
-        @input = input
+    def initialize(name:  nil)
         @name = name 
         @@all << self
     end
