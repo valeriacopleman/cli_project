@@ -18,6 +18,7 @@ class CLI
                 puts " "
                 API.get_quote(Character.all.at(@input.to_i - 1))
                 puts " "
+
             else
                 puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
                 puts "~~Oops! Invalid response. Please try again.~~"
@@ -41,14 +42,7 @@ end
         end
     end
 
-    #make a prompt and figure why it is not in order
-    #def print_quote
-     #   API.get_quote(Character.all.at(@input.to_i - 1))
-     #   @quote.each do |q|
-     #       puts q["quote"]
-     #   end
-        #API.get_quote(Character.all.at(@input.to_i - 1))
-    #end
+    
 
 
 

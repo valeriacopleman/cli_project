@@ -17,15 +17,18 @@ class API
 
 
     def self.get_quote(character)
-        #binding.pry
+        binding.pry
         url = "https://www.breakingbadapi.com/api/quote/random?author=#{character.name.gsub('á','a')}"
         uri = URI(url)
         response = Net::HTTP.get(uri)
         quote = JSON.parse(response)
-        quote.each do |q|
-            puts q["quote"]
-        end
-        #quote[0][1]
+        #quote.each do |q|
+         #   puts q["quote"]
+        #end
+        #quote.select do |q| 
+        #    q["quote"] 
+        #end
+        #quote.find { |x| x.quote }
     end
 
 end
