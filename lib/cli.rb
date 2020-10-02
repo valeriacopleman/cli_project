@@ -16,7 +16,8 @@ class CLI
         while @input != 'exit' do
             if @input.to_i > 0 && @input.to_i <= 57
                 puts " "
-                API.get_quote(Character.all.at(@input.to_i - 1))
+                q = API.get_quote(Character.all.at(@input.to_i - 1))
+                puts q 
                 puts " "
 
             else

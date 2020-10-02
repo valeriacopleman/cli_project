@@ -11,24 +11,22 @@ class API
         end
     end
 
-        #binding.pry
-        #quote["quote"][0]
-
-
-
     def self.get_quote(character)
-        binding.pry
+       
         url = "https://www.breakingbadapi.com/api/quote/random?author=#{character.name.gsub('á','a')}"
         uri = URI(url)
         response = Net::HTTP.get(uri)
         quote = JSON.parse(response)
+        
+        #binding.pry
         #quote.each do |q|
-         #   puts q["quote"]
+            #q["quote"]
         #end
         #quote.select do |q| 
-        #    q["quote"] 
+            #q["quote"] 
         #end
         #quote.find { |x| x.quote }
+        #quote.map {|x| x.values[0]}
     end
 
 end
