@@ -22,13 +22,16 @@ class API
         uri = URI(url)
         response = Net::HTTP.get(uri)
         quote = JSON.parse(response)
-        #quote[0]['quote']
         quote.each do |q|
             puts q["quote"]
         end
+        #quote[0][1]
     end
 
 end
 
-#gsub(' ','+').
+#gsub(' ','+')
+#quote.each do |q|
+ #   puts q["quote"]
+#end
 
