@@ -15,9 +15,11 @@ class CLI
         while @input != 'exit' do
             if @input.to_i > 0 && @input.to_i <= print_list.count
                 puts ""
-                #API.get_quote(Character.all.at(input.to_i - 1))
-                print_quote 
+                API.get_quote(Character.all.at(@input.to_i - 1))
+                
+                #print_quote 
             else
+                puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
                 puts "~~Oops! Invalid response. Please try again.~~"
             end
                 puts ""
@@ -38,12 +40,13 @@ class CLI
         end
     end
 
-    def print_quote
-        API.get_quote(Character.all.at(@input.to_i - 1))
-        @quote.each do |q|
-            puts q["quote"]
-        end
-    end
+    #def print_quote
+     #   API.get_quote(Character.all.at(@input.to_i - 1))
+     #   @quote.each do |q|
+     #       puts q["quote"]
+     #   end
+        #API.get_quote(Character.all.at(@input.to_i - 1))
+    #end
 
 end
 
