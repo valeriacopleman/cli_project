@@ -40,12 +40,10 @@ class CLI
                 input = gets.strip.downcase
                 puts ""
         end
-            puts ""
             puts "      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
             puts "      Thank you for using The Breaking Bad Lines!"
             puts "                      Goodbye!"
             puts "      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-            puts ""
     end
 
     def print_list
