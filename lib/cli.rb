@@ -9,22 +9,25 @@ class CLI
         puts "      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
         print_list
         puts " "
-        puts "Enter the number of your favorite Breaking Bad character to get a famous quote or 'Exit' to exit the program: "
+        puts "Enter the number of your favorite Breaking Bad character to get a famous quote, or 'Exit' to exit the program: "
         puts " "
         input = gets.strip.downcase 
-
+        puts ""
         while input != 'exit' do
             if input.to_i > 0 && input.to_i <= Character.all.count
-                puts ""
-                quote = API.get_quote(Character.all.at(input.to_i - 1))
+                chara_name = Character.all.at(input.to_i - 1)
+                quote = API.get_quote(chara_name)
                 if quote.empty? 
                     puts "~~Oops, I'm sorry. Looks like that character had no memorable quotes. Try again.~~"
                 else 
                     puts "\"#{quote}\""
                 end
+                    puts ""
+                    puts "#{chara_name.name}"
+                    puts "Nickname: #{chara_name.nickname}"
+                    puts "Status: #{chara_name.status}"
             elsif input == 'list'
                 print_list
-            elsif input == 'more'   
             else
                 puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
                 puts "~~ERROR: Invalid response. Please try again.~~"
@@ -35,6 +38,7 @@ class CLI
                 puts "To get the list again enter 'List'"
                 puts ""
                 input = gets.strip.downcase
+                puts ""
         end
             puts ""
             puts "      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"

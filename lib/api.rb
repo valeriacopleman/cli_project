@@ -6,7 +6,7 @@ class API
         response = Net::HTTP.get(uri)
         characters = JSON.parse(response)
         characters.each do |char|
-          Character.new(name: char["name"]) 
+          Character.new(name: char["name"],nickname: char["nickname"],status: char["status"]) 
         end
     end
 
