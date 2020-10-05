@@ -17,10 +17,8 @@ class API
         quote = JSON.parse(response)
         if quote.any?
             quote[0]["quote"]
-        else
-            quote.clear
         end
-
+        quote
     end
 
 end
