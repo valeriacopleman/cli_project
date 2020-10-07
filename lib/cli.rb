@@ -8,6 +8,7 @@ class CLI
         puts "      Welcome to The Breaking Bad Lines!"
         puts "      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
         puts "Characters:"
+        puts ""
         print_list
         puts " "
         puts "Enter the number of your favorite Breaking Bad character to get a famous quote, or 'Exit' to exit the program: "
